@@ -14,10 +14,13 @@ namespace miPrimerProyecto
             //ejercicio de obtener la nota final de la materia de Programacion I.
             Console.Write("Lab1: ");
             double lab1 = double.Parse(Console.ReadLine()); //8
+
             Console.Write("Lab2: ");
             double lab2 = double.Parse(Console.ReadLine()); //9
+
             Console.Write("Parcial 1: ");
             double parcial1 = double.Parse(Console.ReadLine()); //7
+
             // 8*30%= 2.4
             // 9*30%= 2.7
             // 7*40%= 2.8
@@ -41,6 +44,17 @@ namespace miPrimerProyecto
             //TAREA: Obtener la nota final por computo y Nota Final de la matera de Programacion I.
 
 
+            //ejercicio obtener el promedio de una serie de numeros
+            int[] serie = new int[] { 5, 4, 6, 8, 9 }; //32
+            int suma = 0;
+            foreach (int num in serie)
+            {
+                suma += num;
+            }
+            decimal prom = suma / serie.Length;
+            Console.WriteLine("La suma es: {0}, el promedio {1}", suma, prom);
             //Pausa.
             Console.ReadLine();
         }
+    }
+}
