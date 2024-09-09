@@ -13,6 +13,9 @@ namespace miPrimerProyecto
             Console.Write("Num1: ");
             sbyte num1 = sbyte.Parse(Console.ReadLine());
             Boolean comprobar = true;
+
+
+
             Console.WriteLine("El valor es: {0}", comprobar);
 
             Console.Write("Num2: ");
