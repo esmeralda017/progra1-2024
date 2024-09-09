@@ -9,7 +9,7 @@ namespace miPrimerProyecto
     internal class Program
     {
         static void Main(string[] args)
-        {
+        { 
             Boolean comprobar = true;
 
 
