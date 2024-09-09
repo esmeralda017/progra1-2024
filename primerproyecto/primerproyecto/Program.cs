@@ -8,43 +8,61 @@ namespace miPrimerProyecto
 {
     internal class Conversores
     {
-       
-    //Filadelfo antonio gutierrez orellana USSS011624
-    //Olimpia esmeralda Rivas Vanegas usss017124
-    class Program
+        internal class Program
         {
+            //filadelfo antonio gutierrez orellana USSS011624
+            //Olimpia esmeralda Rivas Vanegas usss017124
             static void Main(string[] args)
             {
-                Console.WriteLine("Calculadora de Impuesto a las Actividades Económicas");
-                Console.WriteLine("---------------------------------------------------");
+                Console.WriteLine("Conversor de Área (Superficie)");
+                Console.WriteLine("-------------------------------");
 
-                Console.WriteLine("Ingrese el monto de la actividad económica:");
-                double monto = double.Parse(Console.ReadLine());
+                Console.WriteLine("Seleccione la unidad de área de origen:");
+                Console.WriteLine("a. Pie Cuadrado");
+                Console.WriteLine("b. Vara Cuadrada");
+                Console.WriteLine("c. Yarda Cuadrada");
+                Console.WriteLine("d. Metro Cuadrado");
+                Console.WriteLine("e. Tareas");
+                Console.WriteLine("f. Manzana");
+                Console.WriteLine("g. Hectárea");
 
-                double impuesto = CalcularImpuesto(monto);
+                int from = int.Parse(Console.ReadLine());
 
-                Console.WriteLine($"El impuesto a pagar es: ${impuesto:F2}");
+                Console.WriteLine("Seleccione la unidad de área de destino:");
+                Console.WriteLine("a. Pie Cuadrado");
+                Console.WriteLine("b. Vara Cuadrada");
+                Console.WriteLine("c. Yarda Cuadrada");
+                Console.WriteLine("d. Metro Cuadrado");
+                Console.WriteLine("e. Tareas");
+                Console.WriteLine("f. Manzana");
+                Console.WriteLine("g. Hectárea");
+
+                int to = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Ingrese la cantidad a convertir:");
+                double amount = double.Parse(Console.ReadLine());
+
+                double result = ConvertirArea(from, to, amount);
+
+                Console.WriteLine($"Resultado: {result}");
 
                 Console.WriteLine("Presione una tecla para continuar...");
                 Console.ReadKey();
             }
 
-            static double CalcularImpuesto(double monto)
+            static double ConvertirArea(int from, int to, double amount)
             {
-                double[] rangos = { 0.01, 500.01, 1000.01, 2000.01, 3000.01, 6000, 8000, 18000.01, 30000.01, 60000.01, 100000.01, 200000.01, 300000.01, 400000.01, 500000.01, 10000000.1 };
-                double[] precios = { 1.5, 1.5, 3, 3, 6, 9, 15, 39, 63, 93, 125, 195, 255, 300, 340, 490 };
-                double[] adicionales = { 0, 3, 3, 3, 3, 2, 2, 2, 1, 0.8, 0.7, 0.6, 0.45, 0.4, 0.30, 0.18 };
+                double[,] areaConversions = {
+                { 1.0, 0.111111, 0.027778, 0.092903, 0.00064516, 0.00015625, 0.000001 }, // Pie Cuadrado
+                { 9.0, 1.0, 0.25, 0.836127, 0.00580625, 0.00140625, 0.000009 }, // Vara Cuadrada
+                { 36.0, 4.0, 1.0, 3.34451, 0.023225, 0.005625, 0.000036 }, // Yarda Cuadrada
+                { 10.7639, 1.19599, 0.298997, 1.0, 0.00694444, 0.00168403, 0.00001 }, // Metro Cuadrado
+                { 1550.0, 172.222, 43.0556, 144.0, 1.0, 0.242188, 0.0015 }, // Tareas
+                { 6400.0, 711.111, 177.778, 589.824, 4.13223, 1.0, 0.00625 }, // Manzana
+                { 107639, 11959.9, 2989.97, 10000.0, 66.6667, 16.0625, 1.0 } // Hectárea
+            };
 
-                int i = 0;
-                while (monto > rangos[i])
-                {
-                    i++;
-                }
-
-                double exceso = monto - rangos[i - 1];
-                double impuesto = (exceso / 1000) * adicionales[i - 1] + precios[i - 1];
-
-                return impuesto;
+                return amount * areaConversions[from, to];
             }
         }
     }
