@@ -1,7 +1,0 @@
-C:\Users\olimp\Desktop\Reproprogra\progra1-2024\primerproyecto\primerproyecto\bin\Debug\primerproyecto.exe.config
-C:\Users\olimp\Desktop\Reproprogra\progra1-2024\primerproyecto\primerproyecto\bin\Debug\primerproyecto.exe
-C:\Users\olimp\Desktop\Reproprogra\progra1-2024\primerproyecto\primerproyecto\bin\Debug\primerproyecto.pdb
-C:\Users\olimp\Desktop\Reproprogra\progra1-2024\primerproyecto\primerproyecto\obj\Debug\primerproyecto.csproj.AssemblyReference.cache
-C:\Users\olimp\Desktop\Reproprogra\progra1-2024\primerproyecto\primerproyecto\obj\Debug\primerproyecto.csproj.CoreCompileInputs.cache
-C:\Users\olimp\Desktop\Reproprogra\progra1-2024\primerproyecto\primerproyecto\obj\Debug\primerproyecto.exe
-C:\Users\olimp\Desktop\Reproprogra\progra1-2024\primerproyecto\primerproyecto\obj\Debug\primerproyecto.pdb
